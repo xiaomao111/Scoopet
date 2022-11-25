@@ -1,0 +1,28 @@
+{
+    "version": "v137",
+    "description": "fancontrol 是一款风扇曲线调节软件",
+    "homepage": "https://github.com/Rem0o/FanControl.Releases",
+    "license": "GPL-2.0-only",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/Rem0o/FanControl.Releases/releases/download/V137/FanControl_net_4_8.zip#/dl.7z",
+            "hash": "DDAA573CCBD2FE3948BC52466ECED8B5549334FEAD7AAE0F24B6E27036F2DFD2"
+        }
+    },
+    "shortcuts": [
+        [
+            "FanControl.exe",
+            "FanControl"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/Rem0o/FanControl.Releases/releases"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/Rem0o/FanControl.Releases/releases/download/$version/FanControl_?-?net_?4_?8.zip#/dl.7z"
+            }
+        }
+    }
+}

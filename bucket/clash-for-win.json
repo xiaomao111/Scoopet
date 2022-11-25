@@ -1,0 +1,35 @@
+{
+    "homepage": "https://docs.cfw.lbyczf.com/",
+    "description": "A Windows GUI based on Clash https://docs.cfw.lbyczf.com/",
+    "version": "0.20.9",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/Fndroid/clash_for_windows_pkg/releases/download/0.20.9/Clash.for.Windows.Setup.0.20.9.exe#/clash.7z",
+            "hash": "64b87a2ad7e76bfbdac42c7d4af7b8e21f8634d9b71418d08c8822df64057453",
+            "installer": {
+                "script": [
+                    "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\"",
+                    "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\Uninstall*\" -Force -Recurse"
+                ]
+            }
+        }
+    },
+    "shortcuts": [
+        [
+            "Clash for Windows.exe",
+            "Clash for Windows"
+        ]
+    ],
+    "persist": "data",
+    "checkver": {
+        "github": "https://github.com/Fndroid/clash_for_windows_pkg"
+    },
+    "autoupdate": {
+        "url": "https://github.com/Fndroid/clash_for_windows_pkg/releases/download/$version/Clash.for.Windows.Setup.$version.exe#/clash.7z",
+        "hash": {
+            "url": "$baseurl/sha256sum",
+            "regex": "^exe: $sha256"
+        }
+    }
+}
